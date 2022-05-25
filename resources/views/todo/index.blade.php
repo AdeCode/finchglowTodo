@@ -17,15 +17,18 @@
         <div class="card-body">
           
             @if (count($todos) < 1)
-                <h5 class="card-title">No task added, click create todo to add a new Todo</h5> 
+                <h5 class="card-title">No task added, click create todo to add task</h5> 
             @else
-                You have {{count($todos)}} Todo tasks.
+                You have {{count($todos)}} Todo task(s).
             @endif
           <p class="card-text">
             <ul class="list-group">
                 @foreach ($todos as $todo)
                     <li class="list-group-item d-flex justify-content-between">
-                        {{$todo->name}}
+                        <a href="/todo/{{$todo->id}}/details" style="text-decoration: none">
+                            {{$todo->name}}
+                        </a>
+                        
                         <span class="align-item-end">
                             <a href="/edit-todo/{{$todo->id}}"><i class="far fa-edit mr-4" style="font-size:24px"></i></a>
 

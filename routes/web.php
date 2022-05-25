@@ -26,6 +26,8 @@ Route::post('/todo',[TodoController::class,'store']);
 Route::get('/edit-todo/{todo}',[TodoController::class,'edit']);
 Route::patch('/edit-todo/{todo}',[TodoController::class,'update']);
 Route::delete('/delete-todo/{todo}',[TodoController::class,'delete'])->name('todo.destroy');
+Route::get('/todo/{todo}/details',[TodoController::class,'details']);
+
 
 
 Route::get('/home', [TodoController::class, 'index'])->name('home');

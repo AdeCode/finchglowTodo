@@ -7,7 +7,11 @@ use App\Models\Todo;
 
 class TodoController extends Controller
 {
-    //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $todos = Todo::all();
@@ -38,7 +42,6 @@ class TodoController extends Controller
 
     public function edit(Todo $todo)
     {
-        // dd($todo);
         return view ('todo.edit', compact('todo'));
     }
 
@@ -56,5 +59,10 @@ class TodoController extends Controller
     {
         $todo->delete();
         return redirect()->back();
+    }
+
+    public function details(Todo $todo)
+    {
+        return view('todo.details', compact('todo'));
     }
 }
