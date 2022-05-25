@@ -17,7 +17,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="row mb-3">
-                                <label for="name" class="col-md-3 col-form-label text-md-end">Todo Name</label>
+                                <label for="name" class="col-md-3 col-form-label text-md-end">Todo Title</label>
                                 <div class="col-md-8">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $todo->name }}" required autofocus>
         

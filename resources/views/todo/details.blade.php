@@ -15,6 +15,7 @@
                     <div>
                       <h4 class="card-title">Title: {{$todo->name}}</h4>
                       <p class="card-text">Description: {{$todo->description}}</p>
+                      <p class="card-text">Date created: {{$todo->created_at}}</p>
                       <a href="/todo" class="card-link">Back</a>                   
                     </div>
                 </div>
